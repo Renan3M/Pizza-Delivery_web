@@ -1,0 +1,22 @@
+<div ng-if="$ctrl.userOnline()">
+<main class="container">
+  <h2>Carrinho de compras do {{$ctrl.username}}</h2>  
+  <div ng-repeat="pizza in $ctrl.nossasPizzas">	
+	  <span>{{::pizza.nome}}</span> <p style="display: inline-block;">({{::pizza.tipo}})</p>
+	 
+	  <p>Descrição: {{::pizza.descricao}}.</p>
+	  <p>Observações: {{::pizza.observacoes}}.</p>
+    <span>Adicionais: </span><span ng-repeat="adicional in pizza.adicionais track by $index">{{adicional}}, </span>
+
+    <div style="margin-top: 10px;">
+    <p>Preço: R${{::pizza.preco}} * {{::pizza.quantidade}}</p>
+    </div>
+	  
+    <p style="clear: both;"></p>
+    <hr></hr>
+    </div>
+</main>
+<button class="btn btn-primary" style="margin-left: 5px;">Finalizar compra</button>
+</div>
+
+<h1 ng-if="!$ctrl.userOnline()">Porfavor entre em sua conta, cliente.</h1>  

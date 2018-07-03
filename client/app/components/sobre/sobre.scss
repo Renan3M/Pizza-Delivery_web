@@ -1,0 +1,27 @@
+@import "../../app-css-globals.scss";
+
+sobre {
+
+color: black;
+font-weight:bold;  
+
+img {
+	margin: 10px 10px 10px 0px;
+
+}
+
+/* Responsividade para a imagem */
+@media (max-width: 800px) {
+	img {
+	width: 500px;
+	height: 400px;
+}
+}
+
+@media (max-width: 550px) {
+	img {
+	width: 350px;
+	height: 250px;
+}
+}
+}

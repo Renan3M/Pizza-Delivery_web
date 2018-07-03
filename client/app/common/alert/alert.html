@@ -1,0 +1,7 @@
+<div>
+  <div uib-alert
+  		 ng-if = !$ctrl.isAlertHidden 
+  		 ng-class="'alert-' + ($ctrl.message.type || 'warning')">
+		{{$ctrl.message.text}}
+	</div>>
+</div>

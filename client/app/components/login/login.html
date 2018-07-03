@@ -1,0 +1,35 @@
+<main class="container"> 
+        <div class="login-page" >
+        <div class="form">
+      <img src="img/pizza-delivery2.png">
+
+      <form class="login-form">
+        <input type="text" placeholder="usuário" ng-model="$ctrl.user"/>
+        <input type="password" placeholder="senha" ng-model="$ctrl.password"/>
+        <button ng-click="$ctrl.loginEval()">login</button>
+        <button class="sem-conta">entrar sem conta</button>
+        <p>Voce pode também entrar com a conta do google:</p>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+        <p class="message">Ainda não é registrado? <a href="#">Crie uma conta</a></p>
+      </form>
+
+
+      <form class="register-form">
+        <input type="text" placeholder="* usuário" ng-model="$ctrl.newUser"/>
+        <input type="email" placeholder="* endereço de email" ng-model="$ctrl.newEmail"/>
+        <input type="text" placeholder="* rua e número" ng-model="$ctrl.newStreet">
+        <input type="text" placeholder="* ponto de referência" ng-model="$ctrl.newReferencePoint">
+        <input type="text" placeholder="* cidade" ng-model="$ctrl.newCity">
+        <input type="text" placeholder="* UF" ng-model="$ctrl.newUF">
+        <input type="number" placeholder="* telefone" ng-model="$ctrl.newTelephone">
+        <input type="password" placeholder="* senha" ng-model="$ctrl.newPassword"/>
+        <p class="password">a senha deve ter no mínimo 6 caracteres e conter letras e números</p>
+        <button id="btn_criar" ng-click="$ctrl.createAccount();">criar</button>
+        <p class="message">* Campos obrigatórios</p>
+        <p class="message">Já tem uma conta? <a href="#">Login</a></p>
+      </form>   
+    </div>
+  </div>
+   <alert message="$ctrl.alertMsg"></alert>
+</main>

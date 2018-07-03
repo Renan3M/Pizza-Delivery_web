@@ -1,0 +1,65 @@
+<main style="padding: 10px;">
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Comprar Pizza</h3>
+</div>
+<div class="modal-body" id="modal-body">
+  <form name="criarForm">
+  <div class="form-group">
+    <input type="number" 
+           name="nomeProduto"
+           class="form-control"
+           placeholder="Quantidade"
+           ng-model="$ctrl.pizza.quantidade"
+           ng-required="true">
+
+
+<div ng-if="$ctrl.btnAdicionalClicked">
+<form>
+ <label>Alho +R$2,00
+    <input type="checkbox" ng-model="$ctrl.adicional_value1" ng-true-value="'Alho'" ng-false-value="">
+  </label><br/>
+ 
+ <label>Catupiry +R$4,00
+    <input type="checkbox" ng-model="$ctrl.adicional_value2" ng-true-value = "'Catupiry'" ng-false-value = "">
+  </label><br/>
+
+  <label>Champignon +R$3,00
+    <input type="checkbox" ng-model="$ctrl.adicional_value3" ng-true-value = "'Champignon'" ng-false-value = "">
+  </label><br/>
+
+  <label>Ovos +R$2,00
+    <input type="checkbox" ng-model="$ctrl.adicional_value4" ng-true-value = "'Ovos'" ng-false-value = "">
+  </label><br/>
+
+  <label>Palmito +R$5,00
+    <input type="checkbox" ng-model="$ctrl.adicional_value5" ng-true-value = "'Palmito'" ng-false-value = "">
+  </label><br/>
+
+  <label>Tomate seco +R$5,00
+    <input type="checkbox" ng-model="$ctrl.adicional_value6" ng-true-value = "'Tomate seco'" ng-false-value = "">
+  </label><br/> 
+</form>
+</div>
+
+  <select ng-model="$ctrl.pizza.borda" class="form-control col-xs-12 bg-faded">
+                        <option value="" disabled selected hidden>Borda</option>
+ <!--7,00 ou 7.00 ?-->  <option value="Catupiry(7,00)">Catupiry +R$7,00</option>
+                        <option value="Cheddar(6,00)">Cheddar +R$6,00</option>
+                        <option value="4 Queijos(8,00)">4 Queijos +R$8,00</option>
+                        <option value="Nutella(11,00)">Nutella +R$11,00</option>
+                        <option value="">Sem recheio</option>
+  </select>
+
+    <textarea
+           placeholder="Observações"
+           ng-model="$ctrl.pizza.observacoes"></textarea>
+           
+    <button class="btn btn-default" type="button" ng-click="$ctrl.showAdicionais()" style="display: block;">Adicionais</button>       
+  </div>
+  </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+    <button class="btn btn-default" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+</div>
+</main>

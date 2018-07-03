@@ -1,0 +1,27 @@
+<main class="container">
+<a ng-if="$ctrl.ifAdm()" ng-click="$ctrl.scrollTo('pizza_add')"><button>Create pizza</button></a>    
+<lista-cardapio update="$ctrl.update" save="$ctrl.onListChange($event)" remove="$ctrl.onItemRemove($event)"></lista-cardapio>
+
+<form class="form-signin mensagem" ng-if="$ctrl.ifAdm()" id="pizza_add">
+    <input type="text" id="inputNome" class="form-control" placeholder="Nome" 
+                ng-model="$ctrl.nome" required autofocus>
+
+        <textarea id="textDescricao" class="form-control" placeholder="Comentário..." 
+                ng-model="$ctrl.descricao" required autofocus></textarea>
+
+        <input type="text" id="inputTipo" class="form-control" placeholder="Tipo de pizza" 
+                ng-model="$ctrl.tipo" required autofocus>
+
+        <input type="number" id="inputPreco" class="form-control" placeholder="Valor da pizza" 
+                ng-model="$ctrl.preco" required autofocus>
+
+        <input type="text" id="inputImgUrl" class="form-control" placeholder="Url da imagem" 
+                ng-model="$ctrl.img_src">
+        <label>Preview da pizza</label>        
+        <img id="imgPreview" ng-src="{{$ctrl.img_src}}" ng-if="$ctrl.img_src"/>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" 
+                ng-click="$ctrl.btnClicked()">Enviar</button>
+    </form>
+    <alert message="$ctrl.alertMsg"></alert>
+	  
+</main>

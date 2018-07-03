@@ -1,0 +1,40 @@
+<main class="container">
+  <div ng-repeat="pizza in $ctrl.listaCardapio" ng-if="$ctrl.showList">
+	  <div ng-click="$ctrl.buyPizza(pizza)">
+	  <img ng-if="pizza.imagem!=undefined" ng-src="{{pizza.imagem}}" alt=" Imagem da pizza" style="width:120px; height:120px;">
+	  <span>{{::pizza.nome}}</span> <p style="display: inline-block;">({{::pizza.tipo}})</p>
+	  <div style="display: inline-block; float: right;">
+	  	<img ng-src="https://png.icons8.com/metro/1600/delete-sign.png" alt="Deletar pizza" style="width:25px; height:25px;" ng-click="$ctrl.RemoverPizza(pizza)" ng-if="$ctrl.ifAdm()">
+
+	  	<img ng-src="https://png.icons8.com/metro/1600/edit.png" alt="Editar pizza" style="width:26px; height:26px;" ng-click="$ctrl.EditarPizza(pizza)" ng-if="$ctrl.ifAdm()">
+	  </div>
+	  <p>{{::pizza.descricao}}.</p>
+
+    <div style="float: right; margin-top: 10px;">
+    <p>Preço: R${{::pizza.preco}}</p>
+    </div>
+	  
+    <p style="clear: both;"></p>
+    <hr></hr>
+    </div>  
+  </div>
+  
+  <div ng-if="!$ctrl.showList">
+  		<h3>Deixe em branco os campos que não deseja modificar</h3>
+  		<form class="form-signin" class="mensagem">
+  		<input type="text" id="inputNovoNome" class="form-control" placeholder="Novo nome" 
+                ng-model="$ctrl.novoNome" autofocus>
+
+        <textarea id="textNovaDescricao" class="form-control" placeholder="Nova descricao" ng-model="$ctrl.novaDescricao" autofocus></textarea>
+
+        <input type="text" id="inputNovaImgUrl" class="form-control" placeholder="Url da nova imagem" ng-model="$ctrl.novaImg_src">
+
+        <input type="text" id="inputNovoTipo" class="form-control" placeholder="Novo tipo da pizza" ng-model="$ctrl.novoTipo">
+
+        <input type="number" id="inputNovoPreco" class="form-control" placeholder="Novo valor da pizza" ng-model="$ctrl.novoPreco">
+
+        <button class="btn btn-xl btn-primary btn-block btn-signin" type="submit" 
+                ng-click="$ctrl.AtualizarPizza()" style="margin-top: 10px;">Atualizar</button>
+        </form>       
+  </div>
+</main>
